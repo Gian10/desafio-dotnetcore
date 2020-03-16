@@ -21,6 +21,4 @@ Dado o problema é necessario desenvolver uma aplicação WebApi para consumo do
 * Total Gasto em Bebida.
 
 
-Enviar para o Email Douglas.linhares@hammerconsult.com.br com o Zip do Projeto e se tiver banco de dados enviar o Dump junto. Boa sorte!
-
 ********
