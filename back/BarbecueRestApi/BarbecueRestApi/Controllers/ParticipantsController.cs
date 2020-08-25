@@ -33,7 +33,7 @@ namespace BarbecueRestApi.Controllers
             return Ok(await _participantService.ListParticipants());
         }
 
-        // Listar Participantes.
+        // Listar Convidados.
         [HttpGet("guest")]
         public async Task<ActionResult<IEnumerable<Participant>>> GetGuest()
         {

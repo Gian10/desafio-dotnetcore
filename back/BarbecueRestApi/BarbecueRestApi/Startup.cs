@@ -48,6 +48,9 @@ namespace BarbecueRestApi
             services.AddScoped<EstablishmentService>();
             services.AddScoped<ParticipantService>();
 
+            // add cors para o front se comunicar com o back
+            services.AddCors();
+
 
             services.AddSwaggerGen((options) =>
             {
@@ -68,6 +71,12 @@ namespace BarbecueRestApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            // add cors
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
 
             app.UseSwagger();
             app.UseSwaggerUI(c => {

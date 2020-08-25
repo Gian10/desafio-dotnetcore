@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarbecueRestApi.Migrations
 {
     [DbContext(typeof(BarbecueRestApiContext))]
-    [Migration("20200822211556_Initial")]
+    [Migration("20200824231235_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
