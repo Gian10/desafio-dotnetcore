@@ -1,0 +1,40 @@
+<app-home></app-home>
+
+<div class="jumbotron jumbotron-fluid"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="custom-column">        
+                    <div class="card text-white bg-primary mb-3" style="max-width: 16rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">GASTO COM COMIDA:</h5>
+                            <p class="card-text">{{totalSpendFood | currency : 'BRL'}}</p>           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <div class="custom-column">
+                    <div class="card text-white bg-primary mb-3" style="max-width: 16rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">GASTO COM BEBIDA:</h5>
+                            <p class="card-text">{{totalSpendDrink | currency : 'BRL'}}</p>           
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <div class="custom-column">
+                    <div class="card text-white bg-success mb-3" style="max-width: 16rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">TOTAL ARRECADADO:</h5>
+                            <p class="card-text">{{totalCollect | currency : 'BRL'}}</p>           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

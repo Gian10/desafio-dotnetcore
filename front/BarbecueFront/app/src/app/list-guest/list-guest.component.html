@@ -1,0 +1,35 @@
+<app-home></app-home>
+
+<div class="container">
+    <h5>LISTAR CONVIDADOS DOS CHURRASCO</h5>
+    <hr />
+    <br>
+    <table  id="guestTable">
+      <tr>
+        <th>Participante</th>
+        <th>Vai Beber</th>
+        <th>É Convidado</th>   
+        <th>Contribuição da Bebida</th>
+        <th>Contribuição da Comida</th>       
+      </tr>
+      <tr *ngFor="let listGuest of guests | paginate: guestPagination" >  
+        <td>{{listGuest.nameParticipant}}</td>
+        <td>{{listGuest.goingToDrink ? "Sim" : "Não"}}</td>
+        <td>{{listGuest.isGuest ? "Sim" : "Não"}}</td>    
+        <td>{{listGuest.drinkPrice | currency: 'R$'}}</td>
+        <td>{{listGuest.foodPrice | currency: 'R$'}}</td>   
+      </tr>
+      <div class="msg" *ngIf="sizeGuest === 0">
+        <p>Nenhum Convidado Cadastrado</p>
+      </div>
+    </table>  
+    <pagination-controls 
+      [maxSize]="maxSize"
+      [directionLinks]="directionLinks"
+      [autoHide]="autoHide"
+      [responsive]="responsive"
+      [previousLabel]="labels.previousLabel"
+      [nextLabel]="labels.nextLabel"
+      (pageChange)="onPageChange($event)"> 
+    </pagination-controls>
+ </div>

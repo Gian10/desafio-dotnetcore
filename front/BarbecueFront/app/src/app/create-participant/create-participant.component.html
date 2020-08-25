@@ -1,0 +1,67 @@
+<app-home></app-home>
+
+<div class="container">
+  <div class="row">     
+      <div class="col-sm">
+        <br>
+        <h5>CADASTRAR PARTICIPANTE</h5>
+        <hr />
+        <br>
+        <form  [formGroup]="createParticipantForm" novalidate (ngSubmit)="createParticipant()">   
+            <div class="campo"> 
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Nome" formControlName = "nameParticipant" >
+              </div>
+            </div>
+            </div>
+      
+        <br> 
+        <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName = "goingToDrink">
+              <label class="form-check-label" for="gridCheck">
+                Vai Beber
+              </label>
+            </div>
+        </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" formControlName = "goGuest" (change)="onChange($event)" >
+              <label class="form-check-label" for="gridCheck">
+                Vai Levar Convidado
+              </label>
+            </div>
+        </div> 
+
+        <div class="col-sm">
+          <br>
+          <h5>CADASTRAR CONVIDADO</h5>
+          <hr />
+          <br>      
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Nome Convidado" [attr.disabled]="disabledGuest?'':null" formControlName = nameGuest>
+                </div>
+              </div>
+              <br> 
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" [attr.disabled]="disabledGuest?'':null" formControlName = guestGoingDrink>
+                  <label class="form-check-label" for="gridCheck">
+                    Vai Beber
+                  </label>
+              </div>
+            </div>  
+        </div>
+        <hr />
+             <div class="col text-center" > 
+                <button 
+                type="submit" 
+                class="btn btn-primary btn-lg"
+                >CONFIRMAR PARTICIPAÇÃO</button> 
+             </div>
+        </form>   
+      </div>
+  </div>
+</div>

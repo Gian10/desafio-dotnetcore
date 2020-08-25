@@ -1,0 +1,43 @@
+.container {
+    padding: 20px;
+}
+
+#guestTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+#guestTable td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+  
+#guestTable tr:nth-child(even){background-color: #f2f2f2;}
+  
+#guestTable tr:hover {background-color: #ddd;}
+  
+#guestTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#guestTable td {
+    text-align: center;
+}
+
+h5{
+    text-align: center;
+}
+a{
+    color: linen;
+}
+
+button{   
+    width:250px;
+}
+
+

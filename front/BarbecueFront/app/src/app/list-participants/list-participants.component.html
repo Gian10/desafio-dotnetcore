@@ -1,0 +1,45 @@
+<app-home></app-home>
+
+<div class="container">
+    <h5>LISTAR PARTICIPANTES DOS CHURRASCO</h5>
+    <hr />
+    <br>
+    <table  id="participantsTable">
+      <tr>
+        <th>#</th>
+        <th>Participante</th>
+        <th>Vai Beber</th>
+        <th>É Convidado</th>   
+        <th>Contribuição da Bebida</th>  
+        <th>Contribuição da Comida</th>     
+        <th width="200px">Ação</th>
+      </tr>
+      <tr *ngFor="let listParticipants of participants | paginate: participantPagination; let i = index ">
+        <td>{{( participantPagination.currentPage - 1) * participantPagination.itemsPerPage + i + 1}}</td>
+        <td>{{listParticipants.nameParticipant}}</td>
+        <td>{{listParticipants.goingToDrink ? "Sim" : "Não"}}</td>
+        <td>{{listParticipants.isGuest ? "Sim" : "Não"}}</td>    
+        <td>{{listParticipants.drinkPrice | currency: 'R$'}}</td>
+        <td>{{listParticipants.foodPrice | currency: 'R$'}}</td>  
+        <td>       
+          <button type="button" (click)="deleteParticipant(listParticipants.ParticipantId)" class="btn btn-danger">Cancelar Participação</button> 
+        </td>  
+      </tr>
+
+      <div class="msg" *ngIf="sizeParticipants === 0">
+        <p>Nenhum Participante Cadastrado</p>
+      </div>
+
+    </table>  
+     <!--  Personalizar vários elementos na paginação -->
+    <pagination-controls 
+      [maxSize]="maxSize"
+      [directionLinks]="directionLinks"
+      [autoHide]="autoHide"
+      [responsive]="responsive"
+      [previousLabel]="labels.previousLabel"
+      [nextLabel]="labels.nextLabel"
+      (pageChange)="onPageChange($event)"> 
+    </pagination-controls>
+ </div>
+
